@@ -23,7 +23,7 @@ jobs:
       - name: "Terraform Init"
         id: init
         run: | 
-          terraform init \ 
+          terraform init \
             -backend-config="resource_group_name=${{ secrets.TF_BACKEND_RESOURCE_GROUP }}" \
             -backend-config="storage_account_name=${{ secrets.TF_BACKEND_STORAGE_ACCOUNT }}" \
             -backend-config="container_name=${{ secrets.TF_BACKEND_CONTAINER_NAME }}" \
