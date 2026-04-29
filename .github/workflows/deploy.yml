@@ -24,10 +24,10 @@ jobs:
         id: init
         run: | 
           terraform init \
-            -backend-config="resource_group_name=${{ secrets.TF_BACKEND_RESOURCE_GROUP }}" \
-            -backend-config="storage_account_name=${{ secrets.TF_BACKEND_STORAGE_ACCOUNT }}" \
-            -backend-config="container_name=${{ secrets.TF_BACKEND_CONTAINER_NAME }}" \
-            -backend-config="key=${{ secrets.TF_BACKEND_KEY }}"
+            -backend-config="resource_group_name=${{ vars.TF_BACKEND_RESOURCE_GROUP }}" \
+            -backend-config="storage_account_name=${{ vars.TF_BACKEND_STORAGE_ACCOUNT }}" \
+            -backend-config="container_name=${{ vars.TF_BACKEND_CONTAINER_NAME }}" \
+            -backend-config="key=${{ vars.TF_BACKEND_KEY }}"
         env:
           ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
           ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
@@ -70,10 +70,10 @@ jobs:
       - name: "Terraform Init"
         run: | 
           terraform init \
-            -backend-config="resource_group_name=${{ secrets.TF_BACKEND_RESOURCE_GROUP }}" \
-            -backend-config="storage_account_name=${{ secrets.TF_BACKEND_STORAGE_ACCOUNT }}" \
-            -backend-config="container_name=${{ secrets.TF_BACKEND_CONTAINER_NAME }}" \
-            -backend-config="key=${{ secrets.TF_BACKEND_KEY }}"
+            -backend-config="resource_group_name=${{ vars.TF_BACKEND_RESOURCE_GROUP }}" \
+            -backend-config="storage_account_name=${{ vars.TF_BACKEND_STORAGE_ACCOUNT }}" \
+            -backend-config="container_name=${{ vars.TF_BACKEND_CONTAINER_NAME }}" \
+            -backend-config="key=${{ vars.TF_BACKEND_KEY }}"
         env:
           ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
           ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
